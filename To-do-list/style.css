@@ -5,17 +5,73 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: rgb(2, 120, 25);
+    --shadow-color: rgba(0,0,0,0.1);
+}
+
 .container {
     width: 100%;
     min-height: 100vh;
     padding: 24px;
     /* CSS for grid paper-like background pattern from magicpattern.com */
-    background-color: #fdfcf6;
+   background-color: #eeecdf;
     opacity: 0.8;
-    background-image:  radial-gradient(#c4c4c4 0.8500000000000001px, transparent 0.8500000000000001px), radial-gradient(#c4c4c4 0.8500000000000001px, #fdfcf6 0.8500000000000001px);
+    background-image:  radial-gradient(#b7b5b5 0.8500000000000001px, transparent 0.8500000000000001px), radial-gradient(#b7b5b5 0.8500000000000001px, #eeecdf 0.8500000000000001px);
     background-size: 34px 34px;
-    background-position: 0 0,17px 17px; 
+    background-position: 0 0,17px 17px;
 }
+
+.todo-app {
+    width: 100%;
+    max-width: 640px;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 0px 16px var(--shadow-color);
+    border: 4px dotted var(--primary-color);
+    border-radius: 20px;
+    margin: 100px auto 20px;
+    padding: 20px 30px 70px 30px;
+}
+
+.row {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #fefefe;
+    border-radius: 40px;
+    box-shadow: 0px 0px 16px var(--shadow-color);
+    padding: 16px;
+    margin-bottom: 16px;
+
+}
+
+.row input {
+    flex: 1;
+    margin-top: 8px;
+    margin-left: 8px;
+    margin-bottom: 8px;
+    padding: 8px 16px;
+    height: 40px;
+    outline: none;
+    border: 1px solid var(--primary-color);
+    background: transparent;
+    font-size: 16px;
+    border-radius: 20px 0px 0px 20px;
+}
+
+button {
+    padding: 8px 24px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 16px;
+    border: 2px solid var(--primary-color);
+    border-radius: 0px 20px 20px 0px;
+
+}
+
 
 h1 {
     font-size: 80px;
@@ -28,4 +84,48 @@ h1 {
 h1:before {
     content: "📝";
     font-size: 50%;
+}
+
+ul li {
+    list-style: none;
+    font-size: 20px;
+    padding: 16px 8px 16px 56px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li:before {
+    content:'';
+    padding:4px;
+    text-align: center;
+    position: absolute;
+    top: 12px;
+    left: 8px;
+    width: 24px;
+    height: 24px;
+ 
+    border-radius: 20%;
+    background-color: white;
+    border: 2px solid #b7b7b7;
+}
+
+ul li.checked {
+    color: var(--primary-color);
+    text-decoration: line-through;
+}
+
+ul li.checked:before {
+    content:'✅';
+    padding:4px;
+    text-align: center;
+    position: absolute;
+    top: 12px;
+    left: 8px;
+    width: 24px;
+    height: 24px;
+ 
+    border-radius: 20%;
+    background-color: white;
+    border: 2px solid #b7b7b7;
 }
