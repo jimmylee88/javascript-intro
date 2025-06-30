@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fredoka', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 24px;
+    /* CSS for grid paper-like background pattern from magicpattern.com */
+    background-color: #fdfcf6;
+    opacity: 0.8;
+    background-image:  radial-gradient(#c4c4c4 0.8500000000000001px, transparent 0.8500000000000001px), radial-gradient(#c4c4c4 0.8500000000000001px, #fdfcf6 0.8500000000000001px);
+    background-size: 34px 34px;
+    background-position: 0 0,17px 17px; 
+}
+
+h1 {
+    font-size: 80px;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 2px;
+    color:rgb(2, 120, 25);
+}
+
+h1:before {
+    content: "📝";
+    font-size: 50%;
+}
