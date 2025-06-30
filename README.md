@@ -9,7 +9,7 @@ The requirements are that the user is able to:
 • Ability to delete tasks
 
 ## Approach 1.
-I'm really lost with Javascript and having a hard time understanding a lot of it.
+I'm still trying to get head around Javascript but struggling with it.
 I know what things do, but the syntax is completely alien and has really thrown me off.
 To begin with, I followed a YouTube tutorial and ended up creating this along with it:
 
@@ -21,6 +21,6 @@ So I'll have another go, and try to create something myself from scratch and not
 
 ## Approach 2
 My biggest problem with the tutorial method is that it doesn't use semantic input tags (radio button, or checkboxes) or buttons for checking off items or removing them.
-This means that when a keyboard-only user, or someone using a screen reader tabs through the structure of the page, the box for ticking off a list item is missed. That's because the tutorial simply uses list items with styling to *look* like checkboxes but they aren't semantically.
+This means that when a keyboard-only user, or someone using a screen reader tabs through the structure of the page, the box for ticking off a list item is missed. That's because the tutorial simply uses list items with styling to *look* like checkboxes but they aren't structured like that semantically.
 
-I think what I'll do is re-do the task and make sure every element uses semantic html tags, and do the javascript from scratch.
+I think what I'll do is re-do the task and make sure every element uses semantic html tags, and do the javascript from scratch even if the results aren't as aesthetically pleasing.
