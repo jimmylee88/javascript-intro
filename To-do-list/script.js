@@ -3,8 +3,8 @@ const listContainer = document.getElementById('list-container');
 
 
 function addTask() {
-    if (inputBox.value === ''){
-        alert("Please write something.\nYou can't add an empty task")
+    if (inputBox.value === ""){
+        alert("Sorry!\nYou can't add an empty task")
     }
 
     else {
@@ -38,5 +38,6 @@ function saveData(){
 function showTask(){
     listContainer.innerHTML = localStorage.getItem("data");
 }
+// stores data in local storage so tasks remain when refreshing the browser
 showTask();
 
