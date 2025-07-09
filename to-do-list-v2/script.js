@@ -35,6 +35,14 @@ function createTaskElement(task){
     const listItem = document.createElement('li');
     // text content from addTask function gets added as a li
     listItem.textContent = task;
+
+    // creates delete button for each task
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = '❌';
+    deleteBtn.className = 'deleteTask';
+    // append delete button to each task li
+    listItem.appendChild(deleteBtn);
+
     // need to append the child to the list for it to appear
     taskList.appendChild(listItem);
 }
@@ -58,6 +66,7 @@ function loadTasks() {
     // for each array item we get, run function createTaskElement, turn into an array, create li elements then add to the list
     tasks.forEach(createTaskElement);
 }
+// need to call this function right at the top for it to work ^
 
 // console log to check if li are being recorded
 // console.log(taskList);

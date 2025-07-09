@@ -64,7 +64,7 @@
     box-shadow: 0px 0px 16px var(--shadow-color);
 }
 
-button {
+#addTask {
     padding: 8px 24px;
     height: 40px;
     background-color: var(--primary-color);
@@ -143,7 +143,7 @@ ul li.checked:before {
     border: 2px solid #b7b7b7;
 }
 
-ul li span {
+.deleteTask {
     position:absolute;
     right: 0;
     top: 10px;
@@ -153,9 +153,11 @@ ul li span {
     line-height: 40px;
     text-align: center;
     border-radius: 20px;
+    background-color: transparent;
+    border: none;
 }
 
-ul li span:hover {
+.deleteTask:hover {
     background-color: #ff9e9e;
 }
 
