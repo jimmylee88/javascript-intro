@@ -1,13 +1,63 @@
-const addButton = document.getElementById("addTask");
-const taskInput = document.getElementById("taskInput");
-const taskList = document.getElementById("taskList");
+// Variables for our button, text input and <ul> for tasks
+const addButton = document.getElementById('addTask');
+const taskInput = document.getElementById('taskInput');
+const taskList = document.getElementById('taskList');
 
-function addTask(){
+// add the function at the start below DOM elements
+loadTasks();
 
+function addTask() {
+    // trim to avoid inputs consisting of white space, trims it down
+    const task = taskInput.value.trim();
+
+    // if statement: if task is not empty, we call the create task element
+    // pass the task value, then we clear the input field
+    if (task) {
+        createTaskElement(task);
+
+        taskInput.value = ' ';
+
+        // calls function that saves to local storage
+        saveTasks();
+
+    }
+    // warns user if task is empty - prompt box pops up
+    else {
+        alert("Task can't be empty. \nPlease enter one");
+    }
 }
+
+// on click, we call the function addTask
+addButton.addEventListener('click', addTask);
 
 function createTaskElement(task){
-    
+    // creates new li inside ul "taskList"
+    const listItem = document.createElement('li');
+    // text content from addTask function gets added as a li
+    listItem.textContent = task;
+    // need to append the child to the list for it to appear
+    taskList.appendChild(listItem);
 }
 
-// console.log(addEventListener)
+// allows you to store data in local storage. tasks will remain when browser is refreshed.
+function saveTasks() {
+    let tasks = [];
+    // takes all li inside the list, then pushes them to an array
+    taskList.querySelectorAll('li').forEach(function(item) {
+        tasks.push(item.textContent.trim());
+    });
+
+    // local storage function, sets item to tasks and turns the array into json format
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+// loads tasks saved in local storage when you refresh the page
+function loadTasks() {
+    // reconverts the json object into an array - || or if nothing is inside the array it will be left empty
+    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    // for each array item we get, run function createTaskElement, turn into an array, create li elements then add to the list
+    tasks.forEach(createTaskElement);
+}
+
+// console log to check if li are being recorded
+// console.log(taskList);

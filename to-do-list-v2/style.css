@@ -106,6 +106,7 @@ ul li {
     position: relative;
 }
 
+/*
 ul li:before {
     content:'';
     padding:4px;
@@ -120,6 +121,7 @@ ul li:before {
     background-color: white;
     border: 2px solid #b7b7b7;
 }
+*/
 
 ul li.checked {
     color: var(--primary-color);
