@@ -65,22 +65,35 @@
 }
 
 #addTask {
-    padding: 8px 24px;
+    padding: 8px 16px;
     height: 40px;
     background-color: var(--primary-color);
     color: white;
     font-size: 16px;
     border: 2px solid var(--primary-color);
     border-radius: 0px 20px 20px 0px;
+    vertical-align: middle;
 }
 
-button:hover {
+/* Google Material icon for add button - hacky bits to centre align vertically :D */
+#addTask span {
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    bottom: 2px;
+}
+
+#addTask:hover {
     background-color: rgb(4, 70, 17);
 }
 
-button:active {
-    font-weight: 600;
+#addTask:focus {
+    box-shadow: 0px 0px 16px var(--shadow-color);
+}
+
+#addTask:active {
     text-decoration: underline;
+    scale: 0.95;
 }
 
 
@@ -159,6 +172,16 @@ ul li.checked:before {
 
 .deleteTask:hover {
     background-color: #ff9e9e;
+}
+
+.deleteTask:focus {
+    box-shadow: 0px 0px 16px var(--shadow-color);
+}
+
+.deleteTask:active {
+    scale: 0.90;
+    text-decoration: none;
+    box-shadow: 0px 0px 16px var(--shadow-color);
 }
 
 @media (max-width: 400px) {

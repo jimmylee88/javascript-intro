@@ -23,7 +23,7 @@ function addTask() {
     }
     // warns user if task is empty - prompt box pops up
     else {
-        alert("Task can't be empty. \nPlease enter one");
+        alert("Task can't be empty. \nType one into the text field");
     }
 }
 
@@ -45,6 +45,20 @@ function createTaskElement(task){
 
     // need to append the child to the list for it to appear
     taskList.appendChild(listItem);
+
+    /*
+    // click on task to mark as done
+    listItem.addEventListener('click', function() {
+        listItem.style.textDecoration = 'line-through';
+    }) 
+    */
+
+    // functionality to delete
+    deleteBtn.addEventListener('click', function() {
+        taskList.removeChild(listItem);
+        // makes sure deleted items don't reappear when refreshing browser, by deleting from local storage
+        saveTasks();
+    });
 }
 
 // allows you to store data in local storage. tasks will remain when browser is refreshed.
@@ -52,7 +66,8 @@ function saveTasks() {
     let tasks = [];
     // takes all li inside the list, then pushes them to an array
     taskList.querySelectorAll('li').forEach(function(item) {
-        tasks.push(item.textContent.trim());
+        // removes the X emoji on each task when it's saved
+        tasks.push(item.textContent.replace('❌','').trim());
     });
 
     // local storage function, sets item to tasks and turns the array into json format
