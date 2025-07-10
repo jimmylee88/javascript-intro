@@ -24,3 +24,7 @@ My biggest problem with the tutorial method is that it doesn't use semantic inpu
 This means that when a keyboard-only user, or someone using a screen reader tabs through the structure of the page, the box for ticking off a list item is missed. That's because the tutorial simply uses list items with styling to *look* like checkboxes but they aren't structured like that semantically.
 
 I think what I'll do is re-do the task and make sure every element uses semantic html tags, and do the javascript from scratch even if the results aren't as aesthetically pleasing.
+
+Eventually, I made this second iteration which allows keyboard only navigation, as it uses semantic html elements with the button to delete a task. It's simpler, but it helped me get my head around the javascript as you can see with how many comments I've added! 😅
+
+https://jimmylee88.github.io/javascript-intro/to-do-list-v2/index.html 
